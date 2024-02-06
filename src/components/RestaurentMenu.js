@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Simmer from "./simmer";
+import Simmer from "./Simmer";
 import Ratingicon from "../utills/icons/Rating.svg";
 import Dish from "./Dish";
 import { useParams } from "react-router-dom";
