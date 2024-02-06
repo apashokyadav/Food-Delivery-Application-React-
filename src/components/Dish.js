@@ -20,7 +20,6 @@ const Dish = ({ dishdata }) => {
   }
   
   
-  console.log("hello");
   return (
     <div className="flex justify-between  border-t-2 h-20">
       <div>

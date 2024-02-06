@@ -13,7 +13,6 @@ const Header = () => {
   const [isSignin, setisSignin] = useState(false);
   const { user, setUser } = useContext(UserContext);
   const cartItems = useSelector((store) => store.cart.items);
-  console.log(cartItems);
 
   return (
     <div className="relative h-20 w-full border-2  flex m-2  justify-between  ">
