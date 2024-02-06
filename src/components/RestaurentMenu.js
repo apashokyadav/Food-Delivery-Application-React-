@@ -8,18 +8,17 @@ const RestaurentMenu = () => {
   const [resInfo, setResInfo] = useState([]);
   const {resid}=useParams();
 
-  useEffect(() => {
-    fetchData();
-  }, []);
-  fetchData = async () => {
+  
+  const fetchData = async () => {
     const data = await fetch(
       "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=26.95250&lng=75.71050&restaurantId="+resid+"&catalog_qa=undefined&submitAction=ENTER"
     );
     const json = await data.json();
     setResInfo(json?.data?.cards);
-   
-    // console.log(resInfo[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards);
   };
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   
 
