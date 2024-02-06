@@ -10,11 +10,9 @@ const Body = () => {
   const [filter1col, setfiter1col] = useState(false);
   const [filter2col, setfiter2col] = useState(false);
   const [searchText, setSearchText] = useState("");
-  useEffect(() => {
-    fetchData();
-  }, []);
+  
 
-  fetchData = async () => {
+  const fetchData = async () => {
     const data=await fetch(
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
@@ -22,6 +20,10 @@ const Body = () => {
     //optional chaining
     setListOfRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   };
+    useEffect(() => {
+      fetchData();
+    }, []);
+
   const onlineStatus=useOnlineStatus();
   if(!onlineStatus) return <h1 className="text-2xl font-bold">Oops!!!  you are offline</h1>
 
