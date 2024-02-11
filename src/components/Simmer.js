@@ -12,7 +12,6 @@ const Fakecard=()=>{
 }
 
 const Simmer = () => {
-    console.log("simmer ki ma bhosda");
   return (
         <div>
             <div className='container ml-10 mt-10 flex justify-between flex-wrap mr-5' >
